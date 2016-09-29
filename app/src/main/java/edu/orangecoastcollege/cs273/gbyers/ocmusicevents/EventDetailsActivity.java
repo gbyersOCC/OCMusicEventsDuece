@@ -13,6 +13,8 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.io.InputStream;
 
+import static edu.orangecoastcollege.cs273.gbyers.ocmusicevents.R.id.eventTitleTextView;
+
 /**
  * Created by gbyers on 9/27/2016.
  */
@@ -23,12 +25,13 @@ public class EventDetailsActivity extends AppCompatActivity {
 
     private Context context= this;
 
-    TextView eventTitle = (TextView) findViewById(R.id.eventTitleTextView);
-    TextView eventDate = (TextView) findViewById(R.id.eventDateDayTextView);
-    TextView eventTime = (TextView) findViewById(R.id.eventTimeTextView);
-    TextView eventLocation = (TextView) findViewById(R.id.eventLocationTextView);
-    TextView eventAddressOne = (TextView) findViewById(R.id.eventAddressOneTextView);
-    TextView eventAddressTwo = (TextView) findViewById(R.id.eventAddressTwoTextView);
+    private TextView eventTitle;
+    private TextView eventDate;
+    private TextView eventTime;
+    private TextView eventLocation;
+    private TextView eventAddressOne;
+    private TextView eventAddressTwo;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,10 +44,17 @@ public class EventDetailsActivity extends AppCompatActivity {
         String dateText = recieved.getStringExtra("Date");
         String timeText = recieved.getStringExtra("Time");
         String locationText = recieved.getStringExtra("Location");
-        String addressTextOne = recieved.getStringExtra("Address1");
-        String addressTextTwo = recieved.getStringExtra("Address2");
+        String addressTextOne = recieved.getStringExtra("ADD1");
+        String addressTextTwo = recieved.getStringExtra("ADD2");
 
         String imageFileName = titleText.replace(" ","")+".jpeg";
+
+        eventTitle = (TextView) findViewById(eventTitleTextView);
+        eventDate = (TextView) findViewById(R.id.eventDateDayTextView);
+        eventTime = (TextView) findViewById(R.id.eventTimeTextView);
+        eventLocation = (TextView) findViewById(R.id.eventLocationTextView);
+        eventAddressOne = (TextView) findViewById(R.id.eventAddressOneTextView);
+        eventAddressTwo = (TextView) findViewById(R.id.eventAddressTwoTextView);
 
         eventImageView = (ImageView) findViewById(R.id.eventImageView);
 

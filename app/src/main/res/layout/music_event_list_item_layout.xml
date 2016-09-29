@@ -18,11 +18,11 @@
         android:layout_weight="1">
 
         <TextView
-            android:text="TextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/listItemTitleTextView"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:text="TextView" />
 
         <TextView
             android:text="TextView"

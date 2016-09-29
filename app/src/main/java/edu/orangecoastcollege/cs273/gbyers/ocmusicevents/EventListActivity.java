@@ -12,8 +12,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class EventListActivity extends ListActivity {
+
     private ListView eventListView;
-private Context context = this;
+    private Context context = this;
     private ArrayList<MusicEvent> allMusicEvents;
 
     @Override
@@ -56,6 +57,7 @@ private Context context = this;
         detailsIntent.putExtra("Location",location);
         detailsIntent.putExtra("ADD1", address1);
         detailsIntent.putExtra("ADD2", address2);
+
         startActivity(detailsIntent);
 
     }
